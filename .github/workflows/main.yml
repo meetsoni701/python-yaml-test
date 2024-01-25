@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    -  run: echo"${{secret.MY_PASSWORD}}" | sudo -S systemctl restart nginx
+    -  run: echo"${{secrets.MY_PASSWORD}}" | sudo -S systemctl restart nginx
     - run: echo "uvicorn main:app" > runfile.sh
       shell: bash
     -  run: pm2 start runfile.sh  
