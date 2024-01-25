@@ -27,8 +27,7 @@ jobs:
     - run: echo "uvicorn main:app" > runfile.sh
       shell: bash
    
-
-    - run: pm2 start -f runfile.sh 
+    - run: pm2 restart all
 
     
     
